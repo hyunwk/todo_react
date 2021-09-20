@@ -19,8 +19,19 @@ module.exports = {
                     }
                 },
             },
+            {
+                test: /\.css$/,   //.css 확장자로 끝나는 모든 파일
+                use: ['style-loader', 'css-loader']
+            }
         ],
     },
-    plugins: [new HtmlWebpackPlugin()],
-    mode: 'production',
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: 'public/index.html',
+        }),
+    ],
+    mode: 'development',
+    performance: {
+        hints: false
+    }
 };
