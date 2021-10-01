@@ -1,7 +1,11 @@
-const webpack = require('webpack')
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 module.exports = {
   mode: 'development',
+  resolve: {
+    extensions: ['.js', '.json', '.wasm', '.jsx'],
+  },
   devtool: 'eval-source-map',
   entry: './src/index.jsx',
   output: {
@@ -27,17 +31,17 @@ module.exports = {
       }, {
         test: /\.s[ac]ss$/i,
         use: [
-          "style-loader",
-          "css-loader",
+          'style-loader',
+          'css-loader',
           {
-            loader: "sass-loader",
+            loader: 'sass-loader',
             options: {
               // Prefer `dart-sass`
-              implementation: require("sass"),
+              implementation: require('sass'),
             },
           },
-        ]
-      }
+        ],
+      },
     ],
   },
 };

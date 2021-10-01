@@ -9,22 +9,34 @@ export default function TodoSetting(props) {
         <button
           className="all"
           onClick={() => props.setViewMode('all')}
-          >
-          all : {props.allCount}
+        >
+          all :
+          {' '}
+          {props.allCount}
         </button>
         <button
           className="active"
           onClick={() => props.setViewMode('active')}
-          >
-          active : {props.activeCount}
+        >
+          active :
+          {' '}
+          {props.activeCount}
         </button>
-        <button className="completed" onClick={() => props.setViewMode('completed')}>completed : {props.completedCount} </button>
-        
+        <button className="completed" onClick={() => props.setViewMode('completed')}>
+          completed :
+          {props.completedCount}
+        </button>
+
       </div>
       <div>
-        <button onClick={() => props.deleteCompleted()}>
-          all Clear
-        </button>
+
+        {props.completedCount ? (
+          <button onClick={() => props.deleteCompleted()}>
+            all Clear
+          </button>
+          )
+        : null}
+
       </div>
     </div>
   );
