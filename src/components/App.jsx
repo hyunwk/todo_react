@@ -21,5 +21,4 @@ const App = class extends React.Component {
     );
   }
 };
-
 export default App;

@@ -9,22 +9,24 @@ export default function CreateTodo(props) {
   };
 
   return (
-    <>
-      <input
-        type="checkbox"
-        onChange={() => props.toggleAll()}
-      />
-      <input
-        type="text"
-        onChange={onChange}
-        onKeyPress={(event) => {
-          if (event.key === 'Enter') {
-            { props.createNew(event.target.value); }
-            setTitle('');
-          }
-        }}
-        value={title}
-      />
-    </>
+    <form>
+      <label htmlFor="checkBox"/>
+        <input
+          type="checkbox"
+          onChange={() => props.toggleAll()}
+        />
+      <label htmlFor="todoInput" />
+        <input
+          type="text"
+          onChange={onChange}
+          onKeyPress={(event) => {
+            if (event.key === 'Enter') {
+              { props.createNew(event.target.value); }
+              setTitle('');
+            }
+          }}
+          value={title}
+        />
+    </form>
   )
 }
