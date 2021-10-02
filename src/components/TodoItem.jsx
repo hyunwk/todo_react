@@ -7,7 +7,7 @@ export default function TodoItem(props) {
   return (
     <>
       <CheckBox
-        handleChange={props.handleChange}
+        toggleCheck={props.toggleCheck}
         item={props.item}
       />
       <ShowTodo

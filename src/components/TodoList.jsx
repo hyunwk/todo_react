@@ -17,7 +17,7 @@ export default function TodoList(props) {
               <li key={item.id}>
                 <TodoItem
                   key={item.id}
-                  handleChange={() => props.handleChange()}
+                  toggleCheck={props.toggleCheck}
                   item={item}
                 />
               </li>

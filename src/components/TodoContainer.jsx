@@ -19,7 +19,7 @@ export default function TodoContainer() {
     }]);
   };
 
-  const handleChange = (id) => {
+  const toggleCheck = (id) => {
     const newTodos = todos.map((todo) => {
       if (todo.id === id) {
         todo.isChecked = !todo.isChecked;
@@ -65,7 +65,7 @@ export default function TodoContainer() {
       />
       <TodoList todos={todos}
                 viewMode={viewMode}
-                handleChange={handleChange}/>
+                toggleCheck={toggleCheck}/>
  
       <TodoSetting
         allCount={allCount}
