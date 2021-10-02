@@ -3,40 +3,35 @@ import './TodoSetting.scss';
 
 export default function TodoSetting(props) {
   return (
-    <div>
-      <div>
-
-        <button
-          className="all"
+    <>
+      <ViewButton>
+        <button className="all"
           onClick={() => props.setViewMode('all')}
         >
-          all :
-          {' '}
-          {props.allCount}
+          {/* all :  {props.allCount} */}
+          all :  {props.countAll}
         </button>
-        <button
-          className="active"
+        <button lassName="active"
           onClick={() => props.setViewMode('active')}
         >
-          active :
-          {' '}
-          {props.activeCount}
+          {/* active : {props.activeCount} */}
+          active : {props.countActive}
         </button>
-        <button className="completed" onClick={() => props.setViewMode('completed')}>
-          completed :
-          {props.completedCount}
+        <button className="completed" 
+          onClick={() => props.setViewMode('completed')}
+        >
+          {/* completed : {props.completedCount} */}
+          completed : {props.countCompleted}
         </button>
-
-      </div>
-      <div>
+      </ViewButton>
+      <DeleteCompletedBtn>
         {props.completedCount ? (
           <button onClick={() => props.deleteCompleted()}>
             all Clear
           </button>
           )
         : null}
-
-      </div>
-    </div>
+      </DeleteCompletedBtn>
+    </>
   );
 }

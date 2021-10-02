@@ -9,7 +9,6 @@ export default function TodoContainer() {
     [],
   );
   const [viewMode, setViewMode] = useState('all');
-  const [isAllChecked, setIsAllChecked] = useState(true);
 
   const createNew = (name) => {
     setTodos([...todos, {
@@ -30,11 +29,11 @@ export default function TodoContainer() {
   };
 
   const toggleAll = () => {
+    const toggleStatus = countAll() === countActive();
     const newTodos = todos.map((todo) => {
-      todo.isChecked = isAllChecked;
+      todo.isChecked = toggleStatus;
       return todo;
     });
-    setIsAllChecked(!isAllChecked);
     setTodos(newTodos);
   };
 
@@ -43,38 +42,44 @@ export default function TodoContainer() {
     setTodos(filteredTodos);
   };
 
-  const allCount = todos
-    .length;
 
-  const activeCount = todos
-    .filter((todo) => !todo.isChecked)
-    .length;
+  const countAll = () => todos.length;
+  const countActive = () => todos.filter(todo => todo.isChecked);
+  const countCompleted = () => todos.filter(todo => !todo.isChecked);
 
-  const completedCount = todos
-    .filter((todo) => todo.isChecked)
-    .length;
+
+  // const allCount = todos
+  //   .length;
+  // const activeCount = todos
+  //   .filter((todo) => !todo.isChecked)
+  //   .length;
+
+  // const completedCount = todos
+  //   .filter((todo) => todo.isChecked)
+  //   .length;
 
   return (
-    <div
-      className="todo-container"
-    >
-
+    <TodoContainer>
       <CreateTodo
         createNew={createNew}
         toggleAll={toggleAll}
       />
-      <TodoList todos={todos}
-                viewMode={viewMode}
-                toggleCheck={toggleCheck}/>
- 
+      <TodoList 
+        todos={todos}
+        viewMode={viewMode}
+        toggleCheck={toggleCheck}
+      />
       <TodoSetting
-        allCount={allCount}
-        activeCount={activeCount}
-        completedCount={completedCount}
+
+        countAll={countAll}
+        countActive={countActive}
+        countCompleted={countCompleted}
+        // activeCount={activeCount}
+        // completedCount={completedCount}
         setViewMode={setViewMode}
         deleteCompleted={deleteCompleted}
         completedCount={completedCount}
       />
-    </div>
+    </TodoContainer>
   );
 }
