@@ -60,6 +60,13 @@ export default function TodoContainer() {
 
   return (
     <TodoContainer>
+      <TodoSetting
+        countAll={countAll}
+        countActive={countActive}
+        countCompleted={countCompleted}
+        setViewMode={setViewMode}
+        deleteCompleted={deleteCompleted}
+      />
       <CreateTodo
         createNew={createNew}
         toggleAll={toggleAll}
@@ -68,17 +75,6 @@ export default function TodoContainer() {
         todos={todos}
         viewMode={viewMode}
         toggleCheck={toggleCheck}
-      />
-      <TodoSetting
-
-        countAll={countAll}
-        countActive={countActive}
-        countCompleted={countCompleted}
-        // activeCount={activeCount}
-        // completedCount={completedCount}
-        setViewMode={setViewMode}
-        deleteCompleted={deleteCompleted}
-        completedCount={completedCount}
       />
     </TodoContainer>
   );
