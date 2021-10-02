@@ -8,7 +8,7 @@ export default function CreateTodo(props) {
     setTitle(event.target.value);
   };
 
-  return (
+  return ( F
     <>
       <input
         type="checkbox"
@@ -25,6 +25,4 @@ export default function CreateTodo(props) {
         }}
         value={title}
       />
-    </>
-  );
-}
+    </}

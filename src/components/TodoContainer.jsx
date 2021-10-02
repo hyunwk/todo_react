@@ -63,24 +63,10 @@ export default function TodoContainer() {
         createNew={createNew}
         toggleAll={toggleAll}
       />
-
-      {todos
-        .filter((item) => {
-          if (viewMode === 'completed' && item.isChecked) {
-            return true;
-          } if (viewMode === 'active' && !item.isChecked) {
-            return true;
-          } if (viewMode === 'all') {
-            return true;
-          }
-        })
-        .map((item) => (
-          <TodoItem
-            key={item.id}
-            handleChange={handleChange}
-            item={item}
-          />
-        ))}
+      <TodoList todos={todos}
+                viewMode={viewMode}
+                handleChange={handleChange}/>
+ 
       <TodoSetting
         allCount={allCount}
         activeCount={activeCount}
@@ -92,3 +78,10 @@ export default function TodoContainer() {
     </div>
   );
 }
+
+1. 함수 object
+2. input label
+3. ul todos->li a span
+4. createtodo block으로 분리
+5. setting 위쪽 효율
+6. useMemo
