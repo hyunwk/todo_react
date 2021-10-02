@@ -4,18 +4,11 @@ import ShowTodo from './ShowTodo';
 import './TodoItem.scss';
 
 export default function TodoItem(props) {
-  // const [isChecked, setIsChecked] = useState('false')
-
-  // const handleChange = () => {
-  //     setIsChecked(!isChecked);
-  // }
-
   return (
     <>
       <CheckBox
-
-        onChange={() => props.handleChange(props.item.id)}
-        isChecked={props.item.isChecked}
+        handleChange={props.handleChange}
+        item={props.item}
       />
       <ShowTodo
         className={props.item.isChecked ? 'checked' : 'checked-none'}

@@ -6,8 +6,8 @@ export default function CheckBox(props) {
     <div>
       <input
         type="checkbox"
-        checked={props.isChecked}
-        onChange={() => props.onChange()}
+        checked={props.item.isChecked}
+        onChange={() => props.handleChange(props.item.id)}
       />
     </div>
   );

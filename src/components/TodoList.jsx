@@ -1,23 +1,29 @@
 import React from 'react'
-
+import TodoItem from './TodoItem';
 export default function TodoList(props) {
     return (
+      <ul>
         {props.todos
             .filter((item) => {
-              if (viewMode === 'completed' && item.isChecked) {
+              if (props.viewMode === 'completed' && item.isChecked) {
                 return true;
-              } if (viewMode === 'active' && !item.isChecked) {
+              } if (props.viewMode === 'active' && !item.isChecked) {
                 return true;
-              } if (viewMode === 'all') {
+              } if (props.viewMode === 'all') {
                 return true;
               }
             })
             .map((item) => (
-              <TodoItem
-                key={item.id}
-                handleChange={() => props.handleChange()}
-                item={item}
-              />
-            ))}
+              <li key={item.id}>
+                <TodoItem
+                  key={item.id}
+                  handleChange={() => props.handleChange()}
+                  item={item}
+                />
+              </li>
+              )
+            )
+          }
+      </ul>
     )
 }

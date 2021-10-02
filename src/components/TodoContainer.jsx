@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import CreateTodo from './CreateTodo';
-import TodoItem from './TodoItem';
+import TodoList from './TodoList';
 import TodoSetting from './TodoSetting';
 
 export default function TodoContainer() {
@@ -78,10 +78,3 @@ export default function TodoContainer() {
     </div>
   );
 }
-
-1. 함수 object
-2. input label
-3. ul todos->li a span
-4. createtodo block으로 분리
-5. setting 위쪽 효율
-6. useMemo

@@ -29,7 +29,6 @@ export default function TodoSetting(props) {
 
       </div>
       <div>
-
         {props.completedCount ? (
           <button onClick={() => props.deleteCompleted()}>
             all Clear
