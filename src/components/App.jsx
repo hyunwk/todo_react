@@ -17,3 +17,19 @@ export default App;
 // 4. createtodo block으로 분리
 // 5. setting 위쪽 효율  o
 // 6. useMemo
+<<<<<<< HEAD
+=======
+
+// eslint-disable-next-line react/prefer-stateless-function
+const App = class extends React.Component {
+  render() {
+    return (
+      <>
+        <h1>todos</h1>
+        <TodoContainer />
+      </>
+    );
+  }
+};
+export default App;
+>>>>>>> a6786d9ce8aefd57436fba088fc744e711387143

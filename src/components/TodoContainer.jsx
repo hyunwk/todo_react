@@ -53,8 +53,8 @@ export default function TodoContainer() {
         countAll={countAll}
         countActive={countActive}
         countCompleted={countCompleted}
-        setViewMode={setViewMode}
         deleteCompleted={deleteCompleted}
+        setViewMode={setViewMode}
       />
       <CreateTodo
         createNew={createNew}
