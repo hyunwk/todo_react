@@ -1,28 +1,35 @@
 import React from 'react';
 import './TodoSetting.scss';
 
-export default function TodoSetting(props) {
+export default function TodoSetting({
+  countAll, countActive, countCompleted, setViewMode, deleteCompleted,
+}) {
   return (
     <>
-      <ViewButton>
-        <button className="all" onClick={() => props.setViewMode('all')}>
-          all :  {props.countAll}
+      <div className="ViewButton">
+        <button className="all" type="button" onClick={() => setViewMode('all')}>
+          all :
+          {' '}
+          {countAll()}
         </button>
-        <button lassName="active" onClick={() => props.setViewMode('active')}>
-          active : {props.countActive}
+        <button className="active" type="button" onClick={() => setViewMode('active')}>
+          active :
+          {' '}
+          {countActive()}
         </button>
-        <button className="completed" onClick={() => props.setViewMode('completed')}>
-          completed : {props.countCompleted}
+        <button className="completed" type="button" onClick={() => setViewMode('completed')}>
+          completed :
+          {' '}
+          {countCompleted()}
         </button>
-      </ViewButton>
-      <DeleteCompletedBtn>
-        {props.completedCount ? (
-          <button onClick={() => props.deleteCompleted()}>
+      </div>
+      <div className="DeleteCompletedBtn">
+        {countCompleted() ? (
+          <button type="button" onClick={() => deleteCompleted()}>
             all Clear
           </button>
-          )
-        : null}
-      </DeleteCompletedBtn>
+        ) : null}
+      </div>
     </>
   );
 }

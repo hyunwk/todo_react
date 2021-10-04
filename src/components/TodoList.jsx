@@ -1,30 +1,31 @@
-import React from 'react'
+/* eslint-disable react/destructuring-assignment */
+import React from 'react';
 import TodoItem from './TodoItem';
-export default function TodoList(props) {
-    return (
-      <ul>
-        {props.todos
-            .filter((item) => {
-              if (props.viewMode === 'completed' && item.isChecked) {
-                return true;
-              } if (props.viewMode === 'active' && !item.isChecked) {
-                return true;
-              } if (props.viewMode === 'all') {
-                return true;
-              }
-            })
-            .map((item) => (
-              <li key={item.id}>
-                <TodoItem
-                  key={item.id}
-                  toggleCheck={props.toggleCheck}
-                  item={item}
-                />
-              </li>
-              )
-            )
+
+export default function TodoList({ todos, viewMode, toggleCheck }) {
+  return (
+    <ul>
+      {todos
+        .filter((item) => {
+          if (viewMode === 'completed' && item.isChecked) {
+            return true;
+          } if (viewMode === 'active' && !item.isChecked) {
+            return true;
+          } if (viewMode === 'all') {
+            return true;
           }
-      </ul>
-      
-    )
+          return false;
+        })
+        .map((item) => (
+          <li key={item.id}>
+            <TodoItem
+              key={item.id}
+              toggleCheck={toggleCheck}
+              item={item}
+            />
+          </li>
+        ))}
+    </ul>
+
+  );
 }

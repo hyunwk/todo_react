@@ -28,6 +28,15 @@ export default function TodoContainer() {
     setTodos(newTodos);
   };
 
+  const deleteCompleted = () => {
+    const filteredTodos = todos.filter((todo) => !todo.isChecked);
+    setTodos(filteredTodos);
+  };
+
+  const countAll = () => todos.length;
+  const countActive = () => todos.filter((todo) => todo.isChecked).length;
+  const countCompleted = () => todos.filter((todo) => !todo.isChecked).length;
+
   const toggleAll = () => {
     const toggleStatus = countAll() === countActive();
     const newTodos = todos.map((todo) => {
@@ -37,29 +46,9 @@ export default function TodoContainer() {
     setTodos(newTodos);
   };
 
-  const deleteCompleted = () => {
-    const filteredTodos = todos.filter((todo) => !todo.isChecked);
-    setTodos(filteredTodos);
-  };
-
-
-  const countAll = () => todos.length;
-  const countActive = () => todos.filter(todo => todo.isChecked);
-  const countCompleted = () => todos.filter(todo => !todo.isChecked);
-
-
-  // const allCount = todos
-  //   .length;
-  // const activeCount = todos
-  //   .filter((todo) => !todo.isChecked)
-  //   .length;
-
-  // const completedCount = todos
-  //   .filter((todo) => todo.isChecked)
-  //   .length;
-
   return (
-    <TodoContainer>
+    <>
+      <p>aa</p>
       <TodoSetting
         countAll={countAll}
         countActive={countActive}
@@ -71,11 +60,11 @@ export default function TodoContainer() {
         createNew={createNew}
         toggleAll={toggleAll}
       />
-      <TodoList 
+      <TodoList
         todos={todos}
         viewMode={viewMode}
         toggleCheck={toggleCheck}
       />
-    </TodoContainer>
+    </>
   );
 }

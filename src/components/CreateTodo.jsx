@@ -1,30 +1,30 @@
 import React, { useState } from 'react';
-import CheckBox from './CheckBox';
 
-export default function CreateTodo(props) {
+export default function CreateTodo({ createNew, toggleAll }) {
   const [title, setTitle] = useState('');
 
   const onChange = (event) => {
     setTitle(event.target.value);
   };
 
+  // status 없어도 됌
   return (
     <>
       <input
         type="checkbox"
-        onChange={() => props.toggleAll()}
+        onChange={() => toggleAll()}
       />
       <input
         type="text"
         onChange={onChange}
         onKeyPress={(event) => {
           if (event.key === 'Enter') {
-            { props.createNew(event.target.value); }
+            createNew(event.target.value);
             setTitle('');
           }
         }}
         value={title}
       />
     </>
-  )
+  );
 }

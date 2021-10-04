@@ -1,18 +1,18 @@
-import React, { useState } from 'react';
+import React from 'react';
 import CheckBox from './CheckBox';
 import ShowTodo from './ShowTodo';
 import './TodoItem.scss';
 
-export default function TodoItem(props) {
+export default function TodoItem({ toggleCheck, item }) {
   return (
     <>
       <CheckBox
-        toggleCheck={props.toggleCheck}
-        item={props.item}
+        toggleCheck={toggleCheck}
+        item={item}
       />
       <ShowTodo
-        className={props.item.isChecked ? 'checked' : 'checked-none'}
-        title={props.item.title}
+        className={item.isChecked ? 'checked' : 'checked-none'}
+        title={item.title}
       />
     </>
   );

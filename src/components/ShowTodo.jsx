@@ -1,12 +1,9 @@
 import React from 'react';
 
-export default function ShowTodo(props) {
+export default function ShowTodo({ title }) {
   return (
-    <div
-      style={props.style}
-      className={props.className}
-    >
-      {props.title}
-    </div>
+    <>
+      {title}
+    </>
   );
 }
