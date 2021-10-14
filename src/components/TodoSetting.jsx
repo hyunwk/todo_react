@@ -5,7 +5,7 @@ export default function TodoSetting({
   countAll, countActive, countCompleted, setViewMode, deleteCompleted,
 }) {
   return (
-    <>
+    <div className="setting-container">
       <div className="ViewButton">
         <button className="all" type="button" onClick={() => setViewMode('all')}>
           all :
@@ -30,6 +30,6 @@ export default function TodoSetting({
           </button>
         ) : null}
       </div>
-    </>
+    </div>
   );
 }

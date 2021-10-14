@@ -47,8 +47,11 @@ export default function TodoContainer() {
   };
 
   return (
-    <>
-      <p>aa</p>
+    <div className="container">
+      <CreateTodo
+        createNew={createNew}
+        toggleAll={toggleAll}
+      />
       <TodoSetting
         countAll={countAll}
         countActive={countActive}
@@ -56,15 +59,11 @@ export default function TodoContainer() {
         deleteCompleted={deleteCompleted}
         setViewMode={setViewMode}
       />
-      <CreateTodo
-        createNew={createNew}
-        toggleAll={toggleAll}
-      />
       <TodoList
         todos={todos}
         viewMode={viewMode}
         toggleCheck={toggleCheck}
       />
-    </>
+    </div>
   );
 }

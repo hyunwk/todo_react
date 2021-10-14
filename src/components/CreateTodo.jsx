@@ -9,13 +9,15 @@ export default function CreateTodo({ createNew, toggleAll }) {
 
   // status 없어도 됌
   return (
-    <>
+    <div className="creat-todo">
       <input
+        className="check"
         type="checkbox"
         onChange={() => toggleAll()}
       />
       <input
         type="text"
+        className="input-text"
         onChange={onChange}
         onKeyPress={(event) => {
           if (event.key === 'Enter') {
@@ -25,6 +27,6 @@ export default function CreateTodo({ createNew, toggleAll }) {
         }}
         value={title}
       />
-    </>
+    </div>
   );
 }

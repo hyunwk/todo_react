@@ -4,7 +4,7 @@ import TodoItem from './TodoItem';
 
 export default function TodoList({ todos, viewMode, toggleCheck }) {
   return (
-    <ul>
+    <ul className="todo-list">
       {todos
         .filter((item) => {
           if (viewMode === 'completed' && item.isChecked) {
@@ -17,7 +17,7 @@ export default function TodoList({ todos, viewMode, toggleCheck }) {
           return false;
         })
         .map((item) => (
-          <li key={item.id}>
+          <li key={item.id} className="todo-item">
             <TodoItem
               key={item.id}
               toggleCheck={toggleCheck}
