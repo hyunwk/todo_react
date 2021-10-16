@@ -33,9 +33,6 @@ export default function TodoContainer() {
     setTodos(filteredTodos);
   };
 
-  const countAll = () => todos.length;
-  const countActive = () => todos.filter((todo) => todo.isChecked).length;
-  const countCompleted = () => todos.filter((todo) => !todo.isChecked).length;
 
   const toggleAll = () => {
     const toggleStatus = countAll() === countActive();
@@ -53,9 +50,7 @@ export default function TodoContainer() {
         toggleAll={toggleAll}
       />
       <TodoSetting
-        countAll={countAll}
-        countActive={countActive}
-        countCompleted={countCompleted}
+        todos={todos}
         deleteCompleted={deleteCompleted}
         setViewMode={setViewMode}
       />

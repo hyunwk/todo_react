@@ -2,8 +2,13 @@ import React from 'react';
 import './TodoSetting.scss';
 
 export default function TodoSetting({
-  countAll, countActive, countCompleted, setViewMode, deleteCompleted,
+  todos, setViewMode, deleteCompleted,
 }) {
+
+  const countAll = () => todos.length;
+  const countActive = () => todos.filter((todo) => todo.isChecked).length;
+  const countCompleted = () => todos.filter((todo) => !todo.isChecked).length;
+
   return (
     <div className="setting-container">
       <div className="ViewButton">

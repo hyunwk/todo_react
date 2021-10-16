@@ -5,12 +5,13 @@
 }
 
 button {
-  background: inherit ; 
-  border:none; box-shadow:none; 
-  border-radius:0; 
-  padding:0; 
-  overflow:visible; 
-  cursor:pointer;
+  background: inherit;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 0;
+  overflow: visible;
+  cursor: pointer;
 }
 
 body {
@@ -23,10 +24,10 @@ body {
   height: 100%;
   margin: 0 auto;
   h1 {
-    padding: 60px 0 30px;
+    padding: 60px 30px;
     font-size: 50px;
     text-align: center;
-    color:rgba(180, 124, 190, 0.587);
+    color: rgba(180, 124, 190, 0.587);
   }
   .container {
     background-color: #fff;
@@ -35,7 +36,7 @@ body {
       display: flex;
       margin: 20px;
       padding-top: 20px;
-      
+
       input {
         width: 100%;
         font-size: 20px;
@@ -58,7 +59,6 @@ body {
       }
     }
 
-
     .setting-container {
       display: flex;
       justify-content: space-between;
@@ -76,7 +76,6 @@ body {
           margin-right: 0;
         }
       }
-
     }
     ul.todo-list {
       .todo-item {
@@ -97,9 +96,6 @@ body {
         .checked {
           color: rgb(187, 187, 187);
           text-decoration: line-through;
-          &-none {
-
-          }
         }
 
         form {
@@ -112,18 +108,19 @@ body {
             display: none;
             cursor: pointer;
           }
-          
+
           label {
             position: relative;
             cursor: pointer;
           }
-          
+
           label:before {
-            content:'';
+            content: '';
             -webkit-appearance: none;
             background-color: transparent;
-            border: 2px solid  rgba(180, 124, 190, 0.587);
-            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+            border: 2px solid rgba(180, 124, 190, 0.587);
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
+              inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
             padding: 10px;
             display: inline-block;
             position: relative;
@@ -131,7 +128,7 @@ body {
             cursor: pointer;
             margin-right: 5px;
           }
-          
+
           input:checked + label:after {
             content: '';
             display: block;
@@ -140,7 +137,7 @@ body {
             left: 9px;
             width: 6px;
             height: 14px;
-            border: solid  rgba(180, 124, 190, 0.587);
+            border: solid rgba(180, 124, 190, 0.587);
             border-width: 0 2px 2px 0;
             transform: rotate(45deg);
           }
@@ -154,9 +151,7 @@ body {
           display: block;
           width: 100%;
         }
-
       }
     }
   }
-
 }
