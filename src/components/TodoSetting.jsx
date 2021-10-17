@@ -14,18 +14,15 @@ export default function TodoSetting({
       <div className="ViewButton">
         <button className="all" type="button" onClick={() => setViewMode('all')}>
           all :
-          {' '}
-          {countAll()}
+          {' ', countAll()}
         </button>
         <button className="active" type="button" onClick={() => setViewMode('active')}>
           active :
-          {' '}
-          {countActive()}
+          {' ', countActive()}
         </button>
         <button className="completed" type="button" onClick={() => setViewMode('completed')}>
           completed :
-          {' '}
-          {countCompleted()}
+          {' ', countCompleted()}
         </button>
       </div>
       <div className="DeleteCompletedBtn">
