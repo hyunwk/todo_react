@@ -10,11 +10,11 @@ export default function CreateTodo({ createNew, toggleAll }) {
   // status 없어도 됌
   return (
     <div className="creat-todo">
-      <input
+      {/* <input
         className="check"
         type="checkbox"
         onChange={() => toggleAll()}
-      />
+      /> */}
       <input
         type="text"
         className="input-text"
