@@ -1,7 +1,7 @@
 # React Todo
 React.js와 CSS를 사용하여 만든 todo 어플리케이션 
 - input : text input 
-- Btn : all, active, completed 된 todo들만 선택적으로 보여
+- Btn : all, active, completed 된 todo들만 선택 가능
 - Btn : all Clear : completed된 todo 삭제
 ---
 # 추가 예정
