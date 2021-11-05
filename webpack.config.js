@@ -2,9 +2,9 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  mode: 'development',
+  mode: 'production',
   resolve: {
-    extensions: ['.js', '.json', '.wasm', '.jsx'],
+    extensions: ['.js', '.jsx'],
   },
   devtool: 'eval-source-map',
   entry: './src/index.jsx',
@@ -28,7 +28,8 @@ module.exports = {
             presets: ['@babel/preset-env', '@babel/preset-react'],
           },
         },
-      }, {
+      },
+      {
         test: /\.s[ac]ss$/i,
         use: [
           'style-loader',
@@ -43,5 +44,8 @@ module.exports = {
         ],
       },
     ],
+  },
+  performance: {
+    hints: false,
   },
 };
